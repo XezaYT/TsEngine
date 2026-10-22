@@ -6,6 +6,13 @@ android {
     buildTypes { release { isMinifyEnabled = false } }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     kotlinOptions { jvmTarget = "17" }
+
+    configurations.all {
+        resolutionStrategy {
+            force("androidx.core:core-ktx:1.12.0")
+            force("androidx.activity:activity-ktx:1.8.2")
+        }
+    }
 }
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
