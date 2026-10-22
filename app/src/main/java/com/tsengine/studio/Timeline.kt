@@ -36,6 +36,10 @@ class Timeline(private val scene: Scene) {
     var fps = 30
     @Volatile var loop = true
     @Volatile var speed = 1f
+        set(s) {
+            field = s
+            audio?.applySpeed(s)
+        }
     @Volatile var timeMs = 0L
     @Volatile var playing = false
     val tracks = LinkedHashMap<String, Track>()
@@ -63,7 +67,7 @@ class Timeline(private val scene: Scene) {
 
     fun toggle() { if (playing) pause() else play() }
 
-    fun setSpeed(s: Float) { speed = s; audio?.applySpeed(s) }
+    fun setSpeed(s: Float) { speed = s }
 
     fun seek(ms: Long) {
         synchronized(scene) {
