@@ -63,7 +63,7 @@ class Timeline(private val scene: Scene) {
 
     fun toggle() { if (playing) pause() else play() }
 
-    fun setSpeed(s: Float) { 
+    fun updateSpeed(s: Float) { 
         speed = s 
         audio?.applySpeed(s) 
     }
