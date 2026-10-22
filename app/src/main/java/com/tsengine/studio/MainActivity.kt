@@ -187,7 +187,7 @@ class MainActivity : ComponentActivity() {
         val sp = btn("1x") {}
         sp.setOnClickListener {
             val speeds = floatArrayOf(0.25f, 0.5f, 1f, 2f); val i = (speeds.indexOfFirst { it == timeline.speed } + 1) % speeds.size
-            timeline.setSpeed(speeds[i]); sp.text = "${speeds[i]}x".replace(".0x", "x")
+            timeline.updateSpeed(speeds[i]); sp.text = "${speeds[i]}x".replace(".0x", "x")
         }
         row.addView(sp)
         val lp = btn("Loop: on") {}
