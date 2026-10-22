@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Deliberately NO INTERNET permission: the studio is 100% offline.
+         Files are picked via the system picker (SAF) and copied into app-specific storage. -->
+    <application android:label="TS Engine Studio" android:theme="@android:style/Theme.Material.NoActionBar"
+        android:allowBackup="true" android:hardwareAccelerated="true">
+        <activity android:name=".MainActivity" android:exported="true"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
